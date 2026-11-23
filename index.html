@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vórtice — Marketing e sites que movem negócios</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap">
+<style>
+:root{--bg:#f6f5f1;--fg:#14131a;--mut:#5d5b68;--card:#ffffffcc;--line:#14131a1f;--a:#5b3df5;--b:#ff5a8a;--c:#12c2a5;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0d14;--fg:#f2f0fa;--mut:#a29fb4;--card:#1a1826cc;--line:#f2f0fa1f;--a:#8b73ff;--b:#ff7aa2;--c:#3de0c2;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d14;--fg:#f2f0fa;--mut:#a29fb4;--card:#1a1826cc;--line:#f2f0fa1f;--a:#8b73ff;--b:#ff7aa2;--c:#3de0c2;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:"Space Grotesk",system-ui,sans-serif;letter-spacing:-.02em}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding:16px 6vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.logo{font-weight:700;font-size:1.3rem;display:flex;gap:8px;align-items:center}
+.dot{width:14px;height:14px;border-radius:50%;background:conic-gradient(var(--a),var(--b),var(--c),var(--a))}
+nav a.cta{font-size:.9rem}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;background:var(--fg);color:var(--bg);font-weight:500}
+.btn.ghost{background:none;color:var(--fg);border:1px solid var(--line);margin-left:8px}
+.hero{position:relative;padding:12vh 6vw 14vh;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;animation:fl 14s ease-in-out infinite alternate}
+.b1{width:48vmax;height:48vmax;background:var(--a);right:-14vmax;top:-10vmax}
+.b2{width:32vmax;height:32vmax;background:var(--b);right:12vmax;bottom:-12vmax;animation-delay:-5s}
+.b3{width:22vmax;height:22vmax;background:var(--c);left:-8vmax;bottom:6vmax;opacity:.35;animation-delay:-9s}
+@keyframes fl{to{transform:translate(4vmax,-3vmax) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+.hero{overflow:hidden}
+.hero>:not(.blob){position:relative;z-index:1}
+.tag{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:22px}
+h1{font-size:clamp(2.6rem,8vw,6rem);line-height:1.02;font-weight:700;max-width:14ch}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{max-width:46ch;margin:26px 0 34px;color:var(--mut);font-size:1.15rem}
+section{padding:11vh 6vw;position:relative}
+h2{font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.1;max-width:18ch;margin-bottom:14px}
+.lead{color:var(--mut);max-width:52ch;margin-bottom:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;backdrop-filter:blur(10px);transition:transform .3s}
+.card:hover{transform:translateY(-6px)}
+.shape{width:46px;height:46px;margin-bottom:22px}
+.card h3{font-size:1.3rem;margin-bottom:8px}
+.card p{color:var(--mut);font-size:.98rem}
+.steps{counter-reset:s;display:grid;gap:0;max-width:760px}
+.step{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:28px 0;border-top:1px solid var(--line)}
+.step:before{counter-increment:s;content:"0" counter(s);font:700 1.6rem "Space Grotesk",sans-serif;color:var(--a)}
+.step h3{font-size:1.25rem;margin-bottom:4px}
+.step p{color:var(--mut)}
+.stats{display:flex;flex-wrap:wrap;gap:40px 70px}
+.stats b{display:block;font:700 clamp(2.4rem,6vw,3.8rem)/1 "Space Grotesk",sans-serif;background:linear-gradient(90deg,var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{color:var(--mut);font-size:.95rem}
+.final{margin:0 4vw 6vh;border-radius:36px;text-align:center;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;padding:12vh 6vw}
+.final h2{margin:0 auto 16px;max-width:16ch}
+.final p{max-width:44ch;margin:0 auto 32px;opacity:.9}
+.final .btn{background:#fff;color:#14131a}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:28px 6vw 40px;color:var(--mut);font-size:.9rem}
+.brand{font:700 clamp(3.5rem,19vw,14rem)/.9 "Space Grotesk",system-ui,sans-serif;letter-spacing:-.05em;margin-bottom:28px;background:linear-gradient(100deg,var(--a),var(--b) 55%,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero h1{font-size:clamp(1.7rem,5vw,3.1rem);max-width:20ch;line-height:1.1}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.q:before{content:"“";font:700 3.4rem/.6 "Space Grotesk",sans-serif;color:var(--b)}
+.q p{font-size:1.05rem}
+.q small{color:var(--mut);display:block}
+.q b{font-family:"Space Grotesk",sans-serif}
+.actions{display:flex;flex-wrap:wrap;gap:16px}
+.btn.ghost{margin-left:0}
+.card[data-go]{cursor:pointer}
+.card[data-go]:after{content:"Saiba mais →";display:block;margin-top:18px;font-weight:500;color:var(--a)}
+.subhero{position:relative;overflow:hidden;padding:9vh 6vw 8vh}
+.subhero>:not(.blob){position:relative;z-index:1}
+.back{display:inline-block;margin-bottom:34px;color:var(--mut)}
+.stitle{font:700 clamp(2.4rem,10vw,5.5rem)/1 "Space Grotesk",system-ui,sans-serif;letter-spacing:-.04em;max-width:12ch;margin-bottom:22px;padding-bottom:.08em;background:linear-gradient(100deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.list{list-style:none;padding:0;max-width:640px}
+.list li{padding:18px 0 18px 34px;border-top:1px solid var(--line);position:relative}
+.list li:before{content:"";position:absolute;left:0;top:26px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--c))}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="#"><span class="dot"></span>Vórtice</a><a class="btn cta" href="#contato">Conversar</a></nav>
+
+<div id="home">
+<header class="hero">
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="brand">Vórtice</div>
+<p class="tag">Marketing · Sites · Crescimento</p>
+<h1>Sua marca, <em>em movimento.</em></h1>
+<p class="sub">Criamos sites rápidos e estratégias de marketing que transformam atenção em clientes. Menos ruído, mais resultado.</p>
+<div class="actions"><a class="btn" href="#contato">Começar um projeto</a><a class="btn ghost" href="#servicos">Ver serviços</a></div>
+</header>
+
+<section id="servicos">
+<h2>O que fazemos, com precisão.</h2>
+<p class="lead">Quatro frentes que trabalham juntas para a sua marca ser encontrada, lembrada e escolhida.</p>
+<div class="grid">
+<div class="card" data-go="sites" tabindex="0" role="link"><svg class="shape" viewBox="0 0 46 46"><circle cx="23" cy="23" r="21" fill="var(--a)"/><circle cx="31" cy="23" r="13" fill="var(--b)" opacity=".85"/></svg><h3>Sites e landing pages</h3><p>Design sob medida, carregamento veloz e foco em converter visitas em contatos.</p></div>
+<div class="card" data-go="estrategia" tabindex="0" role="link"><svg class="shape" viewBox="0 0 46 46"><path d="M3 43 23 3l20 40z" fill="var(--b)"/><path d="M13 43 23 23l10 20z" fill="var(--a)" opacity=".8"/></svg><h3>Estratégia de marketing</h3><p>Posicionamento, funil e planejamento claros, ligados a metas que você consegue medir.</p></div>
+<div class="card" data-go="trafego" tabindex="0" role="link"><svg class="shape" viewBox="0 0 46 46"><rect x="3" y="3" width="26" height="26" rx="8" fill="var(--c)"/><rect x="17" y="17" width="26" height="26" rx="8" fill="var(--a)" opacity=".85"/></svg><h3>Tráfego e SEO</h3><p>Anúncios e otimização orgânica para colocar sua marca diante de quem já procura por ela.</p></div>
+<div class="card" data-go="identidade" tabindex="0" role="link"><svg class="shape" viewBox="0 0 46 46"><path d="M3 23C3 8 23 8 23 23s20 15 20 0" fill="none" stroke="var(--b)" stroke-width="8" stroke-linecap="round"/></svg><h3>Identidade e conteúdo</h3><p>Voz, visual e textos consistentes em cada ponto de contato com o seu público.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Um processo simples e transparente.</h2>
+<p class="lead">Você sempre sabe em que etapa está e o que vem a seguir.</p>
+<div class="steps">
+<div class="step"><div><h3>Escutar</h3><p>Entendemos seu negócio, seu público e o que sucesso significa para você.</p></div></div>
+<div class="step"><div><h3>Desenhar</h3><p>Transformamos a estratégia em estrutura, texto e design aprovados por você.</p></div></div>
+<div class="step"><div><h3>Lançar e evoluir</h3><p>Publicamos, medimos e melhoramos continuamente com base em dados reais.</p></div></div>
+</div>
+</section>
+
+<section>
+<h2>Quem trabalha com a gente recomenda.</h2>
+<p class="lead">Algumas palavras de clientes que cresceram com a Vórtice.</p>
+<div class="quotes">
+<div class="q"><p>Em dois meses o site novo dobrou os pedidos de orçamento. Equipe atenta e muito clara em tudo.</p><div><b>Mariana Costa</b><small>Clínica Essenza</small></div></div>
+<div class="q"><p>Finalmente uma marca que parece com o que a gente é. O processo foi simples e sem surpresas.</p><div><b>Rafael Lima</b><small>Studio Rafa Fitness</small></div></div>
+<div class="q"><p>Estratégia e site andando juntos fez toda a diferença. Hoje a maioria dos nossos clientes chega pelo Google.</p><div><b>Camila Duarte</b><small>Duarte Arquitetura</small></div></div>
+</div>
+</section>
+
+<section>
+<div class="stats">
+<div><b>+120</b><span>projetos entregues</span></div>
+<div><b>3×</b><span>mais contatos, em média</span></div>
+<div><b>&lt; 2s</b><span>de carregamento</span></div>
+</div>
+</section>
+
+<section id="contato" class="final">
+<h2>Vamos tirar sua ideia do papel?</h2>
+<p>Conte-nos o que você precisa e respondemos em até um dia útil, sem compromisso.</p>
+<a class="btn" href="mailto:marketvortice@gmail.com">marketvortice@gmail.com</a>
+</section>
+
+</div>
+<main id="sub" hidden></main>
+<footer><span>© 2026 Vórtice Estúdio</span><span>Marketing e criação de sites</span></footer>
+<script>
+const P={
+sites:{t:"Sites e landing pages",l:"Páginas rápidas, bonitas e pensadas para transformar visitas em contatos.",b:[["Design sob medida","Nada de modelo pronto: o visual nasce da sua marca."],["Velocidade","Carregamento rápido, inclusive no celular."],["Feito para converter","Cada seção guia o visitante até o seu contato."]],e:["Site institucional ou landing page","Versão adaptada para celular","Formulário e botão de WhatsApp","Configuração de domínio e e-mail","Boas práticas de SEO já incluídas"]},
+estrategia:{t:"Estratégia de marketing",l:"Um plano claro para a sua marca ser lembrada e escolhida.",b:[["Posicionamento","Definimos o que torna você diferente e relevante."],["Funil de vendas","Mapeamos o caminho do primeiro contato até o cliente."],["Metas medíveis","Cada ação ligada a um número que você acompanha."]],e:["Diagnóstico da marca e do mercado","Definição de público e proposta de valor","Plano de canais e calendário","Metas e indicadores","Relatórios periódicos"]},
+trafego:{t:"Tráfego e SEO",l:"Coloque sua marca diante de quem já está procurando por ela.",b:[["Anúncios com foco","Campanhas segmentadas para o público certo."],["SEO que dura","Conteúdo e estrutura que ganham posição no Google."],["Dados à vista","Você enxerga o que funciona e onde investir."]],e:["Campanhas no Google e nas redes sociais","Pesquisa e escolha de palavras-chave","Otimização das páginas do site","Acompanhamento de conversões","Ajustes contínuos e relatórios"]},
+identidade:{t:"Identidade e conteúdo",l:"Voz, visual e textos consistentes em cada contato com o seu público.",b:[["Voz da marca","Um jeito próprio e reconhecível de se comunicar."],["Visual consistente","Cores, tipos e formas que se repetem com clareza."],["Conteúdo útil","Textos que informam, engajam e constroem confiança."]],e:["Logotipo e paleta de cores","Guia de voz e tom","Textos do site e das redes","Modelos para publicações","Banco de ideias de conteúdo"]}};
+const home=document.getElementById("home"),sub=document.getElementById("sub");
+function render(){
+ const h=location.hash.slice(1),p=P[h];
+ if(p){
+  home.hidden=true;sub.hidden=false;
+  sub.innerHTML=`<section class="subhero"><div class="blob b1"></div><div class="blob b2"></div><a class="back" href="#servicos">← Voltar</a><p class="tag">Serviço</p><h1 class="stitle">${p.t}</h1><p class="sub">${p.l}</p><a class="btn" href="#contato">Falar com a gente</a></section><section><h2>Como ajudamos</h2><div class="grid">${p.b.map(x=>`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join("")}</div></section><section><h2>O que entregamos</h2><ul class="list">${p.e.map(x=>`<li>${x}</li>`).join("")}</ul></section>`;
+  window.scrollTo(0,0);
+ }else{
+  sub.hidden=true;home.hidden=false;
+  const el=h&&document.getElementById(h);
+  requestAnimationFrame(()=>el?el.scrollIntoView():window.scrollTo(0,0));
+ }
+}
+addEventListener("hashchange",render);
+document.querySelectorAll("[data-go]").forEach(c=>{c.onclick=()=>{location.hash=c.dataset.go};c.onkeydown=e=>{if(e.key==="Enter")c.click()}});
+render();
+</script>
+</body>
+</html>
